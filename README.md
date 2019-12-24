@@ -41,7 +41,7 @@ Use `SineWave.play()` and `SineWave.stop()` to start and stop the SineWave, resp
 
 Use `SineWave.set_pitch_per_second(pitch_per_second)` and `SineWave.set_decibels_per_second(decibels_per_second)` to change the values of `SineWave.pitch_per_second` and `SineWave.decibels_per_second`, respectively.
 
-## Note on Pitch and Volume
+## A Note on Pitch and Volume
 You may want to directly modify the frequency and amplitude of a SineWave. We do provide two alternative functions, `SineWave.set_frequency(hertz)` and `SineWave.set_amplitude(percent)`, however we suggest that you use `SineWave.set_pitch(pitch)` and `SineWave.set_volume(decibels)` instead.
 
 Why? The brain naturally perceives *ratios* between sound's frequency and amplitude much better than differences. This means that working directly with frequency will cause high frequencies to be much harder to distinguish than low frequencies. Similarly for amplitude.
