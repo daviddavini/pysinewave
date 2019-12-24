@@ -16,19 +16,10 @@ white_christmas = [4,4,4,4,5,4,3,4,5,5,5,5,6,7,7,7,7,9,11,12,14,12,11,9,7,7,7,7,
                    4,4,4,4,5,4,3,4,5,5,5,5,6,7,7,7,7,9,11,12,14,12,11,9,7,7,7,7,7,7,0,2,
                    4,3,4,3,4,9,9,7,12,12,12,12,12,12,0,2,4,4,4,4,7,2,2,-5,0]
 
-# sw1 = SineWave(pitch=12, pitch_per_second=12)
-# sw1.play()
-# time.sleep(1)
-# sw1.set_volume(10)
-# time.sleep(1)
-# sw1.set_volume(-10)
-# time.sleep(3)
-# sw1.set_volume(0)
-# time.sleep(100)
 
 def play_song(song, note_per_second=4):
 
-    sinewave = SineWave(song[0],36)
+    sinewave = SineWave(song[0],24)
 
     sinewave.play()
 
@@ -36,5 +27,5 @@ def play_song(song, note_per_second=4):
         sinewave.set_pitch(pitch)
         time.sleep(1/note_per_second)
 
-play_song(white_christmas, 2)
-#play_song(o_christmas_tree, 2)
+#play_song(white_christmas, 2)
+play_song(o_christmas_tree, 2)

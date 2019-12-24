@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="pysinewave",
-    version="0.0.3",
+    version="0.0.5",
     author="David Davini",
     author_email="daviddavini@ucla.com",
     description="Generate and play sine waves in real time, that can make smooth, continuous transitions in pitch and volume.",
@@ -17,6 +17,10 @@ setuptools.setup(
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
+    ],
+    install_requires=[
+          'numpy',
+          'sounddevice',
     ],
     python_requires='>=3.6',
 )

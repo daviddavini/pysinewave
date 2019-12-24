@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: pysinewave
-Version: 0.0.3
+Version: 0.0.5
 Summary: Generate and play sine waves in real time, that can make smooth, continuous transitions in pitch and volume.
 Home-page: https://github.com/daviddavini/continuous-sine-wave
 Author: David Davini
