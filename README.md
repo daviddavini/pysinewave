@@ -14,34 +14,34 @@ import time
 
 from pysinewave import SineWave
 
-# Create a sine wave, with a starting pitch of 12, and a pitch increase/decrease speed of 10/second
+# Create a sine wave, with a starting pitch of 12, and a pitch change speed of 10/second.
 sinewave = SineWave(pitch = 12, pitch_per_second = 10)
 
-# Turn the sine wave on
+# Turn the sine wave on.
 sinewave.play()
 
-# Sleep for 2 seconds, as the sinewave keeps playing
+# Sleep for 2 seconds, as the sinewave keeps playing.
 time.sleep(2)
 
-# Set the goal pitch to -5
+# Set the goal pitch to -5.
 sinewave.set_pitch(-5)
 
-# Sleep for 3 seconds, as the sinewave smoothly slides its pitch down from 12 to -5, and stays there
+# Sleep for 3 seconds, as the sinewave smoothly slides its pitch down from 12 to -5, and stays there.
 time.sleep(3)
 ```
 
-## Primary functions
+## Useful Functions
 
-Use *SineWave.set_pitch(pitch)* to change the pitch of a SineWave. The SineWave will smoothly transition to this new pitch at a rate of *SineWave.pitch_per_second*.
+Use `SineWave.set_pitch(pitch)` to change the pitch of a SineWave. The SineWave will smoothly transition to this new pitch at a rate of `SineWave.pitch_per_second`.
 
-Use *SineWave.set_volume(decibels)* to change the volume of a SineWave. The SineWave will smoothly transition to this new volume at a rate of *SineWave.decibels_per_second*.
+Use `SineWave.set_volume(decibels)` to change the volume of a SineWave. The SineWave will smoothly transition to this new volume at a rate of `SineWave.decibels_per_second`.
 
-Use *SineWave.play()* and *SineWave.stop()* to start and stop the SineWave, respectively.
+Use `SineWave.play()` and `SineWave.stop()` to start and stop the SineWave, respectively.
 
 ## Note on Pitch and Volume
-You may want to directly modify the frequency and amplitude of a SineWave. We do provide two alternative functions, *SineWave.set_frequency(hertz)* and *SineWave.set_amplitude(percent)*, however we suggest that you use *SineWave.set_pitch(pitch)* and *SineWave.set_volume(decibels)* instead.
+You may want to directly modify the frequency and amplitude of a SineWave. We do provide two alternative functions, `SineWave.set_frequency(hertz)` and `SineWave.set_amplitude(percent)`, however we suggest that you use `SineWave.set_pitch(pitch)` and `SineWave.set_volume(decibels)` instead.
 
-Why? The brain naturally perceives *ratios* between sound's frequency and amplitude much better than differences. This means that working directly with frequency will cause changes in high frequencies to be much harder to percieve than changes in low frequencies, and similarly for amplitude.
+Why? The brain naturally perceives *ratios* between sound's frequency and amplitude much better than differences. This means that working directly with frequency will cause changes in high frequencies to be much harder to percieve than changes in low frequencies. Similarly for amplitude.
 
 The conversion between pitch and frequency (in Hz) is: **frequency = 440 * 2^(pitch-9)**. For instance, note that a pitch of 0 is middle C, i.e. a frequency of 261.63 Hz.
 
