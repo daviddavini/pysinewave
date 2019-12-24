@@ -3,8 +3,8 @@ import sys
 import numpy as np
 import sounddevice as sd
 
-from continuous_sinewave import utilities
-from continuous_sinewave import sinewave_generator
+from pysinewave import utilities
+from pysinewave import sinewave_generator
 
 class SineWave:
     '''Generates and plays a continuous sinewave, with smooth transitions in frequency (pitch)
@@ -28,7 +28,7 @@ class SineWave:
             print(status, file=sys.stderr)
 
         # Get and use the sinewave's next batch of data
-        data = self.sinewave_generator.next_array(frames)
+        data = self.sinewave_generator.next_data(frames)
         outdata[:] = data.reshape(-1, 1)
 
     def play(self):

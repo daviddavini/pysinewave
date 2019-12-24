@@ -1,7 +1,7 @@
 import pytest
 import math
 
-from continuous_sinewave import utilities
+from pysinewave import utilities
 
 # def test_bounded():
 #     # Out-of-bounds values snap to closest bound
