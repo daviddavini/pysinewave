@@ -1,6 +1,6 @@
 # PySineWave
 
-PySineWave offers an easy way to generate and play sine waves that can make smooth, continuous transitions in pitch and volume in real time. These sine waves are created, threaded and played (fed into an sound channel) behind the scenes. All you have to do is create SineWaves and call their easy-to-use functions!
+PySineWave offers an easy way to generate and play sine waves that can make smooth, continuous transitions in pitch and volume in real time. These sine waves are created, threaded and played (fed into a sound channel) behind the scenes. All you have to do is create SineWaves and call their easy-to-use functions!
 
 ## Installation
 Open the terminal, and type:
