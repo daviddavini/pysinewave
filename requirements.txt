@@ -8,7 +8,7 @@ more-itertools==8.0.2
 numpy==1.18.0
 packaging==19.2
 pluggy==0.13.1
-py==1.8.0
+py==1.10.0
 pycparser==2.19
 pylint==2.4.4
 pyparsing==2.4.5
