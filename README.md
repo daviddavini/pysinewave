@@ -41,6 +41,12 @@ Use `SineWave.play()` and `SineWave.stop()` to start and stop the SineWave, resp
 
 Use `SineWave.set_pitch_per_second(pitch_per_second)` and `SineWave.set_decibels_per_second(decibels_per_second)` to change the values of `SineWave.pitch_per_second` and `SineWave.decibels_per_second`, respectively.
 
+## Mono/Stereo
+
+You are provided the ablility to output stereo audio. To do so, specify `channels_output=2` when instanciating your SineWave object. In stereo mode, you have the possibility to choose which specific channel will output SineWave.
+
+There are 3 available parameters : `'lr'`which stands for "left-right" and outputs the audio in both left and right channels, `'l'`for "left", which only outputs audio in the left channel and `'r'`which stands for — you guessed it — "right" which outputs audio only in the right channel.
+
 ## A Note on Pitch and Volume
 You may want to directly modify the frequency and amplitude of a SineWave. We do provide two alternative functions, `SineWave.set_frequency(hertz)` and `SineWave.set_amplitude(percent)`, however we suggest that you use `SineWave.set_pitch(pitch)` and `SineWave.set_volume(decibels)` instead.
 
