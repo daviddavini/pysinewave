@@ -12,6 +12,7 @@ class SineWave:
 
     def __init__(self, pitch=0, pitch_per_second=12, decibels=0, decibels_per_second=1, channels=1, channel_side="lr",
                 samplerate=utilities.DEFAULT_SAMPLE_RATE):
+
         self.sinewave_generator = sinewave_generator.SineWaveGenerator(
                                     pitch=pitch, pitch_per_second=pitch_per_second,
                                     decibels = decibels, decibels_per_second=decibels_per_second,
@@ -20,10 +21,13 @@ class SineWave:
         # Create the output stream
         self.output_stream = sd.OutputStream(channels=channels, callback= lambda *args: self._callback(*args), 
                                 samplerate=samplerate)
-        if channel_side == 'l' and channels == 2:
-            self.channel_side = 1
-        elif channel_side == 'r' and channels == 2:
+
+        self.channels = channels
+        
+        if channel_side == 'r':
             self.channel_side = 0
+        elif channel_side == 'l':
+            self.channel_side = 1
         else: self.channel_side = -1
 
     def _callback(self, outdata, frames, time, status):
@@ -34,13 +38,13 @@ class SineWave:
 
         # Get and use the sinewave's next batch of data
         data = self.sinewave_generator.next_data(frames)
-
         outdata[:] = data.reshape(-1, 1)
         
         # Output on the given channel
-        if self.channel_side != -1:
-            for sample in outdata:
-                sample[self.channel_side] = 0
+        if self.channel_side != -1 and self.channels == 2:
+            outdata[:, self.channel_side] = 0.0
+            
+
 
 
     def play(self):
