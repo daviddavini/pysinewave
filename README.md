@@ -52,7 +52,7 @@ You may want to directly modify the frequency and amplitude of a SineWave. We do
 
 Why? The brain naturally perceives *ratios* between sound's frequency and amplitude much better than differences. This means that working directly with frequency will cause high frequencies to be much harder to distinguish than low frequencies. Similarly for amplitude.
 
-The conversion between pitch and frequency (in Hz) is: **frequency = 440 * 2^((pitch-9)/2)**. For instance, note that a pitch of 0 is middle C, i.e. a frequency of 261.63 Hz.
+The conversion between pitch and frequency (in Hz) is: **frequency = 440 * 2^((pitch-9)/12)**. For instance, note that a pitch of 0 is middle C, i.e. a frequency of 261.63 Hz.
 
 The conversion between volume (in decibels) and amplitude is: **amplitude = 2^(volume/10)**. For instance, increasing the volume by 10 decibels doubles the amplitude of the sine wave.
 
